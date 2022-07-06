@@ -1,0 +1,5 @@
+    Home (State)
+   /    \  (props)傳入
+ Edit  List
+         \
+         Item
