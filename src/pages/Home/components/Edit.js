@@ -1,32 +1,36 @@
 import React from 'react';
 import { useState } from 'react';
+// 給一個唯一值的套件
+import { v4 } from 'uuid';
 
-const Edit = ({ add }) => {
-
+const Edit = ({ add, submittingStatus }) => {
     const [note, setNote] = useState('');
     // 讓input的note值不會被綁死
     function noteChange(e) {
-        setNote(e.target.value)
+        setNote(e.target.value);
     }
 
     const [date, setDate] = useState('');
     function dateChange(e) {
-        setDate(e.target.value)
+        setDate(e.target.value);
     }
 
     const [time, setTime] = useState('');
     function timeChange(e) {
-        setTime(e.target.value)
+        setTime(e.target.value);
     }
 
     function addItem() {
-        add({function (prevData) {
-            return [...prevData,{
+        submittingStatus.current = true;
+        add((prevData) => [
+            {
+                id: v4(),
                 note,
                 date,
                 time,
-            }]
-        }});
+            },
+            ...prevData,
+        ]);
     }
 
     return (
