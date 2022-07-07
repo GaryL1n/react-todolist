@@ -20,7 +20,13 @@ const Edit = ({ add }) => {
     }
 
     function addItem() {
-        add([1, 2, 3]);
+        add({function (prevData) {
+            return [...prevData,{
+                note,
+                date,
+                time,
+            }]
+        }});
     }
 
     return (

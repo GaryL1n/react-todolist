@@ -1,5 +1,5 @@
-    Home (State)
-   /    \  (props)傳入
- Edit  List
-         \
-         Item
+           Home (State)
+          /    \  (props)傳入
+(State) Edit  List
+                \
+                Item

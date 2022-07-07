@@ -1,10 +1,15 @@
 import React from 'react';
 
-const Item = () => {
-    return <div className='item'>
-        我是item
-        <button className='remove'>刪除</button>
-    </div>;
+const Item = ({ note, date, time }) => {
+    return (
+        <div className="item">
+            <div>
+                <p>{note}</p>
+                <p>{`${date} ${time}`}</p>
+            </div>
+            <button className="remove">刪除</button>
+        </div>
+    );
 };
 
 export default Item;

@@ -1,13 +1,14 @@
 import React from 'react';
 import Item from './Item';
 
-    //拿父層的State變Props
-const List = ({listDate}) => {
+//拿父層的State變Props
+const List = ({ listData }) => {
     return (
         <div className="list">
-            {
-                listDate.map(item =><Item key={item} />)
-            }
+            {listData?.map((item) => {
+                const { note, date, time } = item;
+                return <Item note={note} date={date} time={time} />;
+            })}
         </div>
     );
 };

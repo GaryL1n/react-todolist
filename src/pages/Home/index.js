@@ -6,14 +6,14 @@ import './index.css';
 
 const Home = () => {
 
-    const [date, setDate] = useState([]);
+    const [data, setData] = useState([]);
 
     return (
         <div className="app">
-            {/* 改變狀態所以setDate放Edit */}
-            <Edit add={setDate} />
+            {/* 改變狀態所以setData放Edit */}
+            <Edit add={setData} />
             {/* 值的是從List裡面生出 所以date放List */}
-            <List listDate={date} />
+            <List listData={data} />
         </div>
     );
 };
